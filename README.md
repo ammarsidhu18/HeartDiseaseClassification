@@ -1,5 +1,5 @@
 # Heart Disease Classification
-Created a binary classification with model **87 accuracy** on heart disease data to help hospitals determine if a given patient has heart disease or not. 
+Created a binary classification with model **87 accuracy** on heart disease data to help hospitals determine if a given patient has heart disease. 
 
 # Data & Problem
 * **Problem**: The goal of this problem is to explore **binary classification** (a sample can only be one of two things) on heart disease data.
