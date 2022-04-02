@@ -26,9 +26,10 @@ After loading the data and inspecting the dataset's features (patient attributes
   - As for males, there are 206 male patients in this datasst, and 114 of them have heart disease, which implies that there is less than a 50% chance that a male patient partaking in this study will have heart disease.
   - There is roughly a 54% chance that a patient partaking in this dataset has heart disease based on no other parameters. This will be used as a **basic baseline** to surpass with machine learning modelling. 
 * Visualized Age vs. Max Heart Rate by Heart Disease patients and found that younger individuals tend to have a higher max heart rate (more dots on the left side of the graph), and the older someone is, the lower their max heart rate is. There also seems to be less heart disease patients in the older age range (around 55+). This is likely because a large portion of the data is collected on older patients (50+ years of age). 
+![ageVSheartrateGraph](https://user-images.githubusercontent.com/46492654/161370926-abf9f1da-94e1-4f65-88fd-826acbf7a1ab.png)
+![densityplots](https://user-images.githubusercontent.com/46492654/161370969-8dc079f1-358a-422c-bc58-9d433c032791.png)
 * Created a heatmap of all the features as well as a correlation matrix for the continuous features, and I found that none of the features are strongly correlated with each other in the negative or positive direction. All features have correlation coefficients between -0.6 or 0.6 (not inclusive) indicating that none of the features or targets have strong correlations; rather relatively weak correlations between each other. 
-
-![Alt text](/posts/HeartDiseaseClassification/DataVisualizations/heatmap.png "Optional title")
+![heatmap](https://user-images.githubusercontent.com/46492654/161370980-e2dd716f-ed4a-4063-802b-0f285c29cc7f.png)
 
 # Model Building
 First, I split the data into X (features) and y (target). Then, I split the X and y data into training and test sets with test set size of 20%. Based on the [Scikit-Learn Algorithm Selection Sheet](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html), I trained 7 classification algorithms and evaluated them using **accuracy** as the primary evaluation metric. I chose accuracy for checking baseline models because it is to interpret how well the models prediction heart disease (0 - Negative or 1 - Positive). 
@@ -44,15 +45,19 @@ The 7 models I selected for the classification:
 
 # Model Performance
 From the baseline model, the Random Forest Classifier provided the best results on the test sets. However, Logistic Regression and Gradient Boosting Classifier also showed promising results with high accuracies. 
+![basemodelsperformance](https://user-images.githubusercontent.com/46492654/161371018-ea000394-5cd5-45e6-bc70-d41abd6570ed.png)
 
 The Random Forest Classifier, Logistic Regression and Gradient Boosting Classifier models had their hyperparameters tuned with **RandomizedSearchCV**, and the **Random Forest Classifier** model provided the best accuracy. 
+![confusionmatrix](https://user-images.githubusercontent.com/46492654/161371037-0a90b729-894e-4ae9-859b-27d6376b148f.png)
 
 To improve the **Random Forest Classifier** model even more, additional hyperparameters were added to the initial hyperparameter grid and **GridSearchCV** was leveraged to achieve the best possible model. The best hyperparameters were obtained, and a classificaiton report as well as a confusion matrix was created on the results of the predictions with these hyperparameters.
+![rfcvmetrics](https://user-images.githubusercontent.com/46492654/161371045-d86fc45a-3174-4e89-a522-c3075f2b5230.png)
 
 # Feature Importance
 Which features contribute most to a model predicting whether someone has heart disease or not?
 * `ca`, `thal`, `oldpeak`, `cp`, `thalach` are the most important features for determining/predicting if a patient has heart disease.
 * `fbs` and `restecg` are the least important features for determing/predicting if a patient has heart disease.
+![featureimportance](https://user-images.githubusercontent.com/46492654/161371061-8c4b5e0d-9d66-45cf-a90b-913135496978.png)
 
 # Conclusions
 Did the final and best model achieve the desired accuracy from the problem statement?
