@@ -28,6 +28,8 @@ After loading the data and inspecting the dataset's features (patient attributes
 * Visualized Age vs. Max Heart Rate by Heart Disease patients and found that younger individuals tend to have a higher max heart rate (more dots on the left side of the graph), and the older someone is, the lower their max heart rate is. There also seems to be less heart disease patients in the older age range (around 55+). This is likely because a large portion of the data is collected on older patients (50+ years of age). 
 * Created a heatmap of all the features as well as a correlation matrix for the continuous features, and I found that none of the features are strongly correlated with each other in the negative or positive direction. All features have correlation coefficients between -0.6 or 0.6 (not inclusive) indicating that none of the features or targets have strong correlations; rather relatively weak correlations between each other. 
 
+![Alt text](/posts/HeartDiseaseClassification/to/heatmap.png "Optional title")
+
 # Model Building
 First, I split the data into X (features) and y (target). Then, I split the X and y data into training and test sets with test set size of 20%. Based on the [Scikit-Learn Algorithm Selection Sheet](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html), I trained 7 classification algorithms and evaluated them using **accuracy** as the primary evaluation metric. I chose accuracy for checking baseline models because it is to interpret how well the models prediction heart disease (0 - Negative or 1 - Positive). 
 
