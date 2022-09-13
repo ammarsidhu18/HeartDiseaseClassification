@@ -7,7 +7,7 @@ This is because we're going to be using a number of different **features** about
 In a statement,
 > Given clinical parameters about a patient, can we predict whether or not they have heart disease?
 * **Data Acquisition**: [UCI Machine Learning Repository: Heart Disease Dataset](https://archive.ics.uci.edu/ml/datasets/heart+disease)
-* **Sucess Metrics**: If we can reach **90% accuracy** at predicting whether or not a patient has heart disease during the proof of concept, we'll purpuse this project.
+* **Sucess Metrics**: If we can reach **90% accuracy** at predicting whether or not a patient has heart disease during the proof of concept, we'll pursuse this project.
 
 # Code and Resources Used
 * **Python Version**: 3.8
